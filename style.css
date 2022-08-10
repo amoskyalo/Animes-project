@@ -92,7 +92,7 @@ main{
     border: none;
     border-radius: 5px;
     color: white;
-    padding: 4px 8px;
+    padding: 8px 8px;
     outline: none;
 }
 .contents{
@@ -109,7 +109,7 @@ main{
 }
  @media(max-width: 768px){
     main{
-        margin-top: 25%;
+        margin-top: 20%;
         padding: 2rem 0;
     }
     .sort-btns{
