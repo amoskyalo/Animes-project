@@ -81,3 +81,45 @@ nav{
          z-index: 3;
      }
  }
+
+main{
+    margin-top: 5%;
+    padding: 1rem;
+    text-align: center;
+}
+.sort-btns button{
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 4px 8px;
+    outline: none;
+}
+.contents{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+.contents>p{
+    border: 1px solid;
+    padding: 0.5rem;
+}
+ @media(max-width: 768px){
+    main{
+        margin-top: 25%;
+        padding: 2rem 0;
+    }
+    .sort-btns{
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .contents{
+       width: 100%;
+    }
+   
+ }
