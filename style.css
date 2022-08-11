@@ -60,6 +60,10 @@ nav{
          position: absolute;
          left: 1rem;
          z-index: 3;
+         font-size: 30px;
+     }
+     .nav-brand span{
+         font-size: 28px;
      }
      .nav-links{
          position: absolute;
