@@ -23,7 +23,7 @@ nav{
     width: 100%;
     padding: 1.5rem 0;
     top: 0;
-    background-color: #000;
+    background-color: #0b3d59;
     color: white;
     z-index: 4;
 }
@@ -68,8 +68,9 @@ nav{
      .nav-links{
          position: absolute;
          top: 5rem;
+         height: 40vh;
          flex-direction: column;
-         background-color: #000;
+         background-color: #0b3d59;
          width: 100%;
          justify-content: center;
          top: -1000px;
