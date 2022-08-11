@@ -186,7 +186,7 @@ form i{
         flex-wrap: wrap;
     }
     form{
-        min-width: 90%;
+        min-width: 80%;
         margin-bottom: 1rem;
     }
     .contents{
