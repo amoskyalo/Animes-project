@@ -98,13 +98,41 @@ main{
     font-size: 28px;
     margin-bottom: 2rem;
 }
+.sort-btns{
+    display: flex;
+    justify-content: center;
+}
 .sort-btns button{
-    background-color: blue;
+    background-color: #1d9bf0;
     border: none;
     border-radius: 5px;
     color: white;
     padding: 8px 8px;
     outline: none;
+    margin: 0 1rem;
+}
+form{
+    border: 1px solid rgb(168, 165, 165);
+    min-width: 300px;
+    max-width: 300px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 8px;
+}
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+form i{
+    color: white;
+    font-size: 16px;
+    background-color: #1d9bf0;
+    padding: 5px;
+    border-radius: 50%;
 }
 .contents{
     width: 50%;
@@ -113,10 +141,11 @@ main{
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
     padding: 1rem;
+    margin-top: 2rem;
 }
 .contents>div{
     width: 15rem;
-    height: 14rem;
+    height: 15rem;
     text-align: start;
     background-color: #eee;
     box-shadow: 0 0 3px #000;
@@ -130,18 +159,19 @@ main{
     width: 100%;
     height: 10rem;
     object-fit: cover;
+    border-radius: 5px 5px 0 0;
 }
 .contents>div .name{
     font-size: 20px;
-    padding: 0.2rem 1rem 0.5rem;
+    padding: 0.2rem 1rem 1rem;
 }
 .contents>div .watch{
     text-align: center;
-    margin: 0 1rem;
+    margin-left: 1rem;
     border: 1px solid;
-    padding: 2px 8px;
+    padding: 5px 8px;
     border-radius: 5px;
-    background-color: #002ead;
+    background-color: #1d9bf0;
     color: white;
 }
  @media(max-width: 768px){
@@ -155,6 +185,10 @@ main{
         justify-content: space-around;
         flex-wrap: wrap;
     }
+    form{
+        min-width: 90%;
+        margin-bottom: 1rem;
+    }
     .contents{
        width: 100%;
        grid-template-columns: repeat(1, 1fr);
@@ -163,7 +197,7 @@ main{
     .contents>div{
         align-self: center;
         justify-self: center;
-        width: 18rem;
+        width: 19rem;
     }
    
  }
