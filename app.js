@@ -40,11 +40,23 @@ const names = [
         "name": "Anime girl",
         "image": "anime-girl.jpg",
         "link": "https://www.bilibili.tv/en/video/2049239198"
-    },{
-        "name": "Yasuke",
-        "image": "yasuke.jpeg",
-        "link": "https://www.netflix.com/ke/title/80990863"
-    }
+    },
+    {
+        "name": "Inuyasha",
+        "image": "inuyasha.jpg",
+        "link": "https://www.youtube.com/watch?v=UCFBsLagBPk"
+    },
+    {
+        "name": "Fate",
+        "image": "fate.jpg",
+        "link": "https://www.youtube.com/watch?v=NPItqNsCXM4"
+    },
+    {
+        "name": "Bleach",
+        "image": "bleach.jpg",
+        "link": "https://www.youtube.com/watch?v=iutQJzAXiWo"
+    },
+    
 ];
 
 const myOutput = document.querySelector('.contents');

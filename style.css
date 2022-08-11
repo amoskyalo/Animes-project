@@ -136,12 +136,11 @@ form i{
 }
 .contents{
     width: 50%;
-    margin: auto;
+    margin: 2rem auto 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 1rem 1rem 0 1rem;
 }
 .contents>div{
     width: 15rem;
@@ -191,13 +190,53 @@ form i{
     }
     .contents{
        width: 100%;
-       grid-template-columns: repeat(1, 1fr);
+       grid-template-columns: repeat(2, 1fr);
        justify-self: center;
     }
     .contents>div{
-        align-self: center;
-        justify-self: center;
-        width: 19rem;
+        height: 14rem;
+        width: auto;
     }
-   
+    .contents>div .name{
+        padding-bottom: 8px;
+    }
+    .contents>div .watch{
+        padding: 3px 8px;
+    }
  }
+
+ footer{
+     padding: 2rem;
+     text-align: center;
+ }
+ .divider{
+     border-top: 1px solid rgb(184, 179, 179);
+     width: 50%;
+     margin: 0 auto 1rem;
+ }
+ .social{
+     padding-bottom: 0.5rem;
+     display: flex;
+     justify-content: center;
+ }
+ .social>a i{
+     background-color: #0b3d59;
+     padding: 18px;
+     border-radius: 50%;
+     margin: 0 1rem 1rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 20px;
+     height: 20px;
+ }
+ .social a i{
+     color: white;
+     font-size: 20px;
+ }
+@media(max-width: 768px){
+    .divider{
+        width: 100%;
+    }
+}
