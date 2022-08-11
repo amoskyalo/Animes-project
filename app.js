@@ -17,21 +17,27 @@ for(const navLink of navLinks){
 //sorting using sort() method:
 const names = [
     {
-        "name": "Kimilu"
+        "name": "Blood of zeus",
+        "image": "zeus.png"
     },
     {
-        "name": "Amos"
+        "name": "Naruto",
+        "image": "naruto.jpg"
     },
     {
-        "name": "Samuel"
+        "name": "Demon slayer",
+        "image": "slayer.jpeg"
     },
     {
-        "name": "Faith"
+        "name": "One piece",
+        "image": "one-piece.jpeg"
     },
     {
-        "name": "Kyalo"
+        "name": "Anime girl",
+        "image": "anime-girl.jpg"
     },{
-        "name": "Angeline"
+        "name": "Yasuke",
+        "image": "yasuke.jpeg"
     }
 ];
 
@@ -40,7 +46,10 @@ const myOutput = document.querySelector('.contents');
 var output = "";
 for(let personName of names){
     output+=`
-        <p class="name">${personName["name"]}</p>`;
+    <div class="animes">
+        <img src="${personName["image"]}"/>
+        <p class="name">${personName["name"]}</p>
+    </div>`;
 };
 
 myOutput.innerHTML = output;
@@ -58,7 +67,10 @@ var sorted = names.sort((a, b)=>{
 var output2 = "";
 for(sortedName of names){
     output2+=`
-    <p class="name">${sortedName["name"]}</p>`
+    <div class="animes">
+        <img src="${sortedName["image"]}"/>
+        <p class="name">${sortedName["name"]}</p>
+    </div>`;
 };
 console.log(output2);
 
