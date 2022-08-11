@@ -199,9 +199,11 @@ form i{
     }
     .contents>div .name{
         padding-bottom: 8px;
+        font-size: 18px;
     }
     .contents>div .watch{
         padding: 3px 8px;
+        font-size: 15px;
     }
  }
 
