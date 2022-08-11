@@ -5,7 +5,6 @@
 }
 a{
     text-decoration: none;
-    color: white;
 }
 ul{
     list-style: none;
@@ -26,11 +25,15 @@ nav{
     top: 0;
     background-color: #000;
     color: white;
+    z-index: 4;
 }
 .nav-brand{
-    color: red;
     font-size: 40px;
     font-style: italic;
+}
+.nav-brand span{
+    color: red;
+    font-size: 38px;
 }
 .nav-links{
     display: flex;
@@ -38,6 +41,9 @@ nav{
 .nav-links .nav-link{
     margin: 0 2.5rem;
     font-size: 20px;
+}
+.nav-links .nav-link a{
+    color: white;
 }
 .toggler{
     display: none;
@@ -110,11 +116,12 @@ main{
 }
 .contents>div{
     width: 15rem;
-    height: 13rem;
+    height: 14rem;
     text-align: start;
-    background-color: antiquewhite;
+    background-color: #eee;
     box-shadow: 0 0 3px #000;
     transition: all 0.3s;
+    border-radius: 5px;
 }
 .contents>div:hover{
     transform: scale(1.1);
@@ -126,7 +133,16 @@ main{
 }
 .contents>div .name{
     font-size: 20px;
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 1rem 0.5rem;
+}
+.contents>div .watch{
+    text-align: center;
+    margin: 0 1rem;
+    border: 1px solid;
+    padding: 2px 8px;
+    border-radius: 5px;
+    background-color: #002ead;
+    color: white;
 }
  @media(max-width: 768px){
     main{
