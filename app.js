@@ -77,7 +77,7 @@ for(sortedName of names){
     <div class="animes">
         <img src="${sortedName["image"]}"/>
         <p class="name">${sortedName["name"]}</p>
-        <a class="watch" href="${sortedName["link"]}"></a>
+        <a class="watch" href="${sortedName["link"]}">Watch</a>
     </div>`;
 };
 
