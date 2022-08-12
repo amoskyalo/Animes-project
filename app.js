@@ -78,7 +78,7 @@ const first_output_animes = first_display_animes.map((first_display) =>{
         </div>`
 
     myOutput.innerHTML+=initial_anime_output;
-})
+});
 
 const sortButton = document.querySelector('.sort');
 
