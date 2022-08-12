@@ -159,6 +159,7 @@ viewAll.addEventListener("click", ()=>{
 const sort_by_name = document.querySelector('.sort-by-name');
 sort_by_name.addEventListener('click', ()=>{
     myOutput.innerHTML = output2;
+    sort_buttons.style.display = "none";
 });
 
 
