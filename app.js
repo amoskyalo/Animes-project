@@ -69,7 +69,7 @@ for(let personName of names){
     <div class="animes">
         <img src="${personName["image"]}"/>
         <p class="name">${personName["name"]}</p>
-        <a class="watch" href="${personName.link}">Watch</a>
+        <a class="watch" href="${personName.link}"><i class="ri-video-line"></i> stream</a>
     </div>`;
 };
 

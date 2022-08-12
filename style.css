@@ -203,14 +203,16 @@ form i{
     padding: 0.2rem 1rem 1rem;
 }
 .contents>div .watch{
-    text-align: center;
-    margin-left: 1rem;
-    border: 1px solid;
-    padding: 5px 8px;
-    border-radius: 5px;
-    background-color: #1d9bf0;
-    color: white;
+    margin: 0 0 0 1rem;
+    color: #0b3d59;
+    font-size: 20px;
+    vertical-align: middle;
 }
+.contents>div .watch i{
+    vertical-align: middle;
+    font-size: 15px;
+}
+
  @media(max-width: 768px){
      .background{
          width: 100%;
@@ -248,10 +250,9 @@ form i{
     }
     .contents>div .name{
         padding-bottom: 8px;
-        font-size: 18px;
+        font-size: 15px;
     }
     .contents>div .watch{
-        padding: 3px 8px;
         font-size: 15px;
     }
  }
