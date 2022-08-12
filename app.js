@@ -80,50 +80,50 @@ const first_output_animes = first_display_animes.map((first_display) =>{
     myOutput.innerHTML+=initial_anime_output;
 });
 
+var output2 = "";
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '337848fd1dmsh7152c94608a87d0p1cca0cjsn3350d457e7b5',
+        'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
+    }
+};
+
+fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
+.then(response => response.json())
+.then(response => {
+    const animes = response.data;
+
+    const sorted_animes = animes.sort((a, b)=>{
+        if(a.title > b.title){
+            return 1;
+        }
+        else if(a.title < b.title){
+            return -1;
+        }
+        return 0;
+    });
+
+    sorted_animes.map((sorted_anime) =>{
+        const sorted_anime_image = sorted_anime.image;
+        const sorted_anime_title = sorted_anime.title;
+        const sorted_anime_link = sorted_anime.link;
+
+        output2 += `
+            <div class="anime">
+                <img src="${sorted_anime_image}"/>
+                <p class="name">${sorted_anime_title}</p>
+                <a href="${sorted_anime_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+            </div>`
+    });
+
+})
+.catch(err => console.error(err));
+
 const sortButton = document.querySelector('.sort');
 
 sortButton.addEventListener("click", ()=>{
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '337848fd1dmsh7152c94608a87d0p1cca0cjsn3350d457e7b5',
-            'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
-        }
-    };
-    
-    fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
-	.then(response => response.json())
-	.then(response => {
-        const animes = response.data;
-
-        const sorted_animes = animes.sort((a, b)=>{
-            if(a.title > b.title){
-                return 1;
-            }
-            else if(a.title < b.title){
-                return -1;
-            }
-            return 0;
-        });
-
-        sorted_animes.map((sorted_anime) =>{
-            console.log(sorted_anime);
-            const sorted_anime_image = sorted_anime.image;
-            const sorted_anime_title = sorted_anime.title;
-            const sorted_anime_link = sorted_anime.link;
-
-            const output2 = `
-                <div class="anime">
-                    <img src="${sorted_anime_image}"/>
-                    <p class="name">${sorted_anime_title}</p>
-                    <a href="${sorted_anime_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
-                </div>`
-
-                myOutput.innerHTML+= output2;
-        })
-
-    })
-	.catch(err => console.error(err));
+    myOutput.innerHTML = output2;
 });
 
 
