@@ -13,7 +13,9 @@ for(const navLink of navLinks){
     navLink.addEventListener('click', ()=>{
         navMenu.classList.remove("active");
     });
-}
+};
+
+
 
 
 //sorting using sort() method:
@@ -123,3 +125,14 @@ const ag = annotationGroup([a3, a1, a2]);
 ag.show();
 
 
+//dark theme
+const body = document.querySelector('.body');
+const animes = document.querySelectorAll('.animes');
+const themeButton = document.querySelector('.theme-toggler');
+
+themeButton.addEventListener('click', ()=>{
+    body.classList.toggle("body-back");
+    for(let anime of animes){
+        anime.classList.toggle('contents-back');
+    }
+})

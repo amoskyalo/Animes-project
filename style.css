@@ -11,10 +11,9 @@ ul{
 }
 
 body{
-    background-color: #0d1117;
+   background-color: #eee;
     padding: 0;
     margin: 0;
-    color: #fff;
 }
 nav{
     display: flex;
@@ -25,7 +24,7 @@ nav{
     height: 4rem;
     max-height: 4rem;
     top: 0;
-    background-color: #0b3d59;
+    background-color: rgb(41,41,41);
     color: white;
     z-index: 999;
 }
@@ -47,22 +46,25 @@ nav{
 .nav-links .nav-link a{
     color: white;
 }
+.theme-toggler i{
+    font-size: 24px;
+    cursor: pointer;
+}
 .toggler{
     display: none;
 }
 .toggler i{
     color: white;
-    font-size: 40px;
 }
  @media(max-width: 768px){
      nav{
-         padding: 2.5rem 0;
+         padding: 2rem 0;
      }
      .nav-brand{
          position: absolute;
          left: 1rem;
          z-index: 3;
-         font-size: 30px;
+         font-size: 25px;
      }
      .nav-brand span{
          font-size: 28px;
@@ -72,7 +74,7 @@ nav{
          top: 5rem;
          height: 40vh;
          flex-direction: column;
-         background-color: #0b3d59;
+         background-color: rgb(41,41,41);
          width: 100%;
          justify-content: center;
          top: -1000px;
@@ -88,15 +90,22 @@ nav{
          text-align: center;
          margin: 1rem 0;
      }
+     .theme-toggler{
+         position: absolute;
+         right: 4rem;
+    }
      .toggler{
          display: block;
          position: absolute;
          right: 1rem;
          z-index: 3;
      }
+     .toggler i, .theme-toggler i{
+         font-size: 25px;
+     }
  }
 header{
-    margin-top: 5rem;
+    margin-top: 4rem;
     text-align: center;
 }
 .background{
@@ -195,12 +204,12 @@ form i{
     grid-gap: 1rem;
     padding: 1rem 1rem 0 1rem;
 }
-.contents>div{
+.animes{
     height: fit-content;
     padding-bottom: 10px;
     text-align: start;
-    background-color: #0d1117;
-    box-shadow: 0 0 5px #fff;
+    background-color: #fff;
+    box-shadow: 0 0 3px #000;
     transition: all 0.3s;
     border-radius: 5px;
 }
