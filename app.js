@@ -109,7 +109,7 @@ myQuote.classList.add("quote");
 parentEl.appendChild(myQuote);
 
 const subScription = document.createElement('p');
-subScription.innerHTML = "NO SUBSCRIPTION";
+subScription.innerHTML = "SUBSCRIPTION";
 parentEl.appendChild(subScription);
 subScription.classList.add('sub');
 
