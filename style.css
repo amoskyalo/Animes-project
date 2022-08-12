@@ -201,7 +201,7 @@ form i{
     border-radius: 5px;
 }
 .contents>div:hover{
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 .contents>div img{
     width: 100%;
