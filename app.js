@@ -1,3 +1,5 @@
+import { annotate, annotationGroup } from "https://unpkg.com/rough-notation?module";
+
 //nav-bar:
 const toggler = document.querySelector('.toggler');
 const navMenu = document.querySelector('.nav-links');
@@ -84,7 +86,7 @@ var sorted = names.sort((a, b)=>{
 });
 
 var output2 = "";
-for(sortedName of names){
+for(let sortedName of names){
     output2+=`
     <div class="animes">
         <img src="${sortedName["image"]}"/>
@@ -98,3 +100,18 @@ sortButton.addEventListener("click", ()=>{
     myOutput.innerHTML = output2;
 });
 
+
+//header
+const myQuote = document.createElement('p');
+const parentEl = document.querySelector('.background-contents');
+myQuote.innerHTML = "“Those who stand at the top determine what’s wrong and what’s right! This very place is neutral ground! Justice will prevail, you say? But, of course, it will! Whoever wins this war becomes justice!” ";
+myQuote.classList.add("quote")
+parentEl.appendChild(myQuote);
+
+
+const header = document.querySelector('.tittle');
+const a1 = annotate(header, {type: 'highlight', color: 'red'});
+const a2 = annotate(myQuote, {type: 'underline', color: 'red'});
+
+const ag = annotationGroup([a1, a2]);
+ag.show();

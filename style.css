@@ -21,11 +21,12 @@ nav{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 1.5rem 0;
+    height: 4rem;
+    max-height: 4rem;
     top: 0;
     background-color: #0b3d59;
     color: white;
-    z-index: 4;
+    z-index: 999;
 }
 .nav-brand{
     font-size: 40px;
@@ -93,9 +94,42 @@ nav{
          z-index: 3;
      }
  }
-
+header{
+    margin-top: 5rem;
+    text-align: center;
+}
+.background{
+    background-image: url(home.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 75%;
+    height: 50vh;
+    margin: auto;
+    position: relative;
+}
+.background-contents{
+    height: 100%;
+    background-color: rgba(11,61,89, 0.7);
+}
+.background-contents .tittle{
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+.background-contents .quote {
+    color: white;
+    position: absolute;
+    top: 50%;
+    font-size: 25px;
+    width: 75%;
+    left: 10%;
+    font-style: italic;
+}
 main{
-    margin-top: 5%;
     padding: 1rem;
     text-align: center;
 }
@@ -178,6 +212,19 @@ form i{
     color: white;
 }
  @media(max-width: 768px){
+     .background{
+         width: 100%;
+         height: 70vh;
+     }
+     .background-contents .tittle{
+         top: 30%;
+     }
+     .background-contents .quote{
+         width: 100%;
+         left: 0;
+         font-size: 18px;
+         top: 60%;
+     }
     main{
         margin-top: 20%;
         padding: 2rem 0;
