@@ -225,10 +225,15 @@ form i{
     top: 0;
     background-color: rgb(168, 165, 165);
     border-radius: 50%;
-    height: 13px;
-    width: 13px;
+    height: 15px;
+    width: 15px;
     font-size: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px;
+    color: #fff;
 }
 .contents{
     width: 75%;
