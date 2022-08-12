@@ -90,7 +90,7 @@ var sorted = names.sort((a, b)=>{
 var output2 = "";
 for(let sortedName of names){
     output2+=`
-    <div class="animes">
+    <div class="anime">
         <img src="${sortedName["image"]}"/>
         <p class="name">${sortedName["name"]}</p>
         <a class="watch" href="${sortedName["link"]}"><i class="ri-video-line"></i> stream</a>
@@ -131,8 +131,8 @@ const animes = document.querySelectorAll('.animes');
 const themeButton = document.querySelector('.theme-toggler');
 
 themeButton.addEventListener('click', ()=>{
-    body.classList.toggle("body-back");
     for(let anime of animes){
         anime.classList.toggle('contents-back');
-    }
+    };
+    body.classList.toggle("body-back");
 })

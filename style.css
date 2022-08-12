@@ -204,7 +204,7 @@ form i{
     grid-gap: 1rem;
     padding: 1rem 1rem 0 1rem;
 }
-.animes{
+.animes, .anime{
     height: fit-content;
     padding-bottom: 10px;
     text-align: start;
@@ -212,6 +212,11 @@ form i{
     box-shadow: 0 0 3px #000;
     transition: all 0.3s;
     border-radius: 5px;
+}
+.anime{
+    background-color: rgb(30,30,30);
+    box-shadow: 0 0 5px #fff;
+    color: #fff;
 }
 .contents>div:hover{
     transform: scale(1.03);
