@@ -232,7 +232,6 @@ form i{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 3px;
     color: #fff;
 }
 .contents{
