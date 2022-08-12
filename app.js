@@ -80,6 +80,9 @@ const first_output_animes = first_display_animes.map((first_display) =>{
     myOutput.innerHTML+=initial_anime_output;
 });
 
+
+//all animes function
+var output1 = "";
 var output2 = "";
 const options = {
     method: 'GET',
@@ -94,6 +97,21 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 .then(response => {
     const animes = response.data;
 
+    //view all function
+    animes.map((all_animes) =>{
+        const all_animes_images = all_animes.image;
+        const all_animes_title = all_animes.title;
+        const all_animes_link = all_animes.link;
+
+        output1+=`
+            <div class="anime">
+                <img src="${all_animes_images}"/>
+                <p class="name">${all_animes_title}</p>
+                <a href="${all_animes_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+            </div>
+        `
+    });
+
     const sorted_animes = animes.sort((a, b)=>{
         if(a.title > b.title){
             return 1;
@@ -104,6 +122,7 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
         return 0;
     });
 
+    //view sorted animes
     sorted_animes.map((sorted_anime) =>{
         const sorted_anime_image = sorted_anime.image;
         const sorted_anime_title = sorted_anime.title;
@@ -120,9 +139,25 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 })
 .catch(err => console.error(err));
 
-const sortButton = document.querySelector('.sort');
+//sorting buttons
+const display_sort_button = document.querySelector('.sort');
+const sort_buttons = document.querySelector('.view');
 
-sortButton.addEventListener("click", ()=>{
+display_sort_button.addEventListener('click', ()=>{
+    sort_buttons.style.display = 'flex';
+    const remove_view = document.querySelector('.no-view');
+    remove_view.addEventListener('click', ()=>{
+        sort_buttons.style.display = "none";
+    });
+});
+
+const viewAll = document.querySelector('.all');
+viewAll.addEventListener("click", ()=>{
+    myOutput.innerHTML = output1;
+});
+
+const sort_by_name = document.querySelector('.sort-by-name');
+sort_by_name.addEventListener('click', ()=>{
     myOutput.innerHTML = output2;
 });
 

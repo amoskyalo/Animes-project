@@ -162,6 +162,7 @@ main{
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+    position: relative;
 }
 .sort-btns button{
     background-color: #1d9bf0;
@@ -195,6 +196,39 @@ form i{
     background-color: #1d9bf0;
     padding: 5px;
     border-radius: 50%;
+}
+.view{
+    position: absolute;
+    right: 30%;
+    top: 70%;
+    width: 6%;
+    background-color: #fff;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 8px 8px;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+}
+.view button{
+    background-color: rgb(168, 165, 165);
+    padding: 8px 0;
+    width: 100%;
+    margin: 5px auto;
+}
+.view button:first-of-type{
+    margin-top: 1rem;
+}
+.view span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(168, 165, 165);
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+    font-size: 10px;
+    cursor: pointer;
 }
 .contents{
     width: 75%;
@@ -269,6 +303,11 @@ form i{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+    }
+    .view{
+        width: 30%;
+        top: 100%;
+        right: 20%;
     }
     form{
         min-width: 80%;
