@@ -91,7 +91,7 @@ for(let sortedName of names){
     <div class="animes">
         <img src="${sortedName["image"]}"/>
         <p class="name">${sortedName["name"]}</p>
-        <a class="watch" href="${sortedName["link"]}">Watch</a>
+        <a class="watch" href="${sortedName["link"]}"><i class="ri-video-line"></i> stream</a>
     </div>`;
 };
 
@@ -104,14 +104,16 @@ sortButton.addEventListener("click", ()=>{
 //header
 const myQuote = document.createElement('p');
 const parentEl = document.querySelector('.background-contents');
-myQuote.innerHTML = "“Those who stand at the top determine what’s wrong and what’s right! This very place is neutral ground! Justice will prevail, you say? But, of course, it will! Whoever wins this war becomes justice!” ";
+myQuote.innerHTML = "<span class='line2'>“Those who stand at the top determine what’s wrong and what’s right! This very place is neutral ground!</span> Justice will prevail, you say? But, of course, it will! Whoever wins this war becomes justice!” ";
 myQuote.classList.add("quote")
 parentEl.appendChild(myQuote);
 
 
 const header = document.querySelector('.tittle');
-const a1 = annotate(header, {type: 'highlight', color: 'red'});
-const a2 = annotate(myQuote, {type: 'underline', color: 'red'});
+const line = document.querySelector('.line2');
 
-const ag = annotationGroup([a1, a2]);
+const a1 = annotate(header, {type: 'highlight', color: 'red'});
+const a2 = annotate(myQuote, {type: 'underline', color: 'yellow', strokeWidth: 0.9});
+const a3 = annotate(line, {type: 'underline', color: 'yellow', strokeWidth: 0.9})
+const ag = annotationGroup([a1, a3, a2]);
 ag.show();
