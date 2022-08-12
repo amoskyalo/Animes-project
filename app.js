@@ -105,15 +105,21 @@ sortButton.addEventListener("click", ()=>{
 const myQuote = document.createElement('p');
 const parentEl = document.querySelector('.background-contents');
 myQuote.innerHTML = "<span class='line2'>“Those who stand at the top determine what’s wrong and what’s right! This very place is neutral ground!</span> Justice will prevail, you say? But, of course, it will! Whoever wins this war becomes justice!” ";
-myQuote.classList.add("quote")
+myQuote.classList.add("quote");
 parentEl.appendChild(myQuote);
 
+const subScription = document.createElement('p');
+subScription.innerHTML = "NO SUBSCRIPTION";
+parentEl.appendChild(subScription);
+subScription.classList.add('sub');
 
 const header = document.querySelector('.tittle');
 const line = document.querySelector('.line2');
 
 const a1 = annotate(header, {type: 'highlight', color: 'red'});
 const a2 = annotate(myQuote, {type: 'underline', color: 'yellow', strokeWidth: 0.9});
-const a3 = annotate(line, {type: 'underline', color: 'yellow', strokeWidth: 0.9})
-const ag = annotationGroup([a1, a3, a2]);
+const a3 = annotate(subScription, {type: 'crossed-off', color: 'red', strokeWidth: 3, iterations: 1})
+const ag = annotationGroup([a3, a1, a2]);
 ag.show();
+
+

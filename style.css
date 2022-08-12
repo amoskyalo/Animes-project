@@ -112,6 +112,15 @@ header{
     height: 100%;
     background-color: rgba(11,61,89, 0.7);
 }
+.background-contents .sub{
+    color: white;
+    position: absolute;
+    left: 4%;
+    top: 10%;
+    border: 1px solid;
+    padding: 8px;
+    font-weight: 900;
+}
 .background-contents .tittle{
     color: white;
     position: absolute;
@@ -206,9 +215,11 @@ form i{
 }
 .contents>div .watch{
     margin: 0 0 0 1rem;
-    color: #0b3d59;
-    font-size: 20px;
-    vertical-align: middle;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1d9bf0;
+    padding: 3px;
+    border-radius: 3px;
 }
 .contents>div .watch i{
     vertical-align: middle;
@@ -219,6 +230,10 @@ form i{
      .background{
          width: 100%;
          height: 70vh;
+     }
+     .background-contents .sub {
+         top: 1%;
+         font-size: 10px;
      }
      .background-contents .tittle{
          top: 30%;
@@ -244,7 +259,7 @@ form i{
     }
     .contents{
        width: 100%;
-       grid-template-columns: repeat(2, 1fr);
+       grid-template-columns: repeat(1, 1fr);
        justify-self: center;
     }
     .contents>div{
@@ -252,10 +267,13 @@ form i{
     }
     .contents>div .name{
         padding-bottom: 8px;
-        font-size: 15px;
     }
     .contents>div .watch{
         font-size: 15px;
+        background-color: #1d9bf0;
+        padding: 3px;
+        border-radius: 3px;
+        color: #fff;
     }
  }
 
