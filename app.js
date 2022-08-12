@@ -19,7 +19,7 @@ for(const navLink of navLinks){
 
 
 //sorting using sort() method:
-const names = [
+const first_display_animes = [
     {
         "name": "Blood of zeus",
         "image": "zeus.png",
@@ -65,41 +65,65 @@ const names = [
 
 const myOutput = document.querySelector('.contents');
 
-var output = "";
-for(let personName of names){
-    output+=`
-    <div class="animes">
-        <img src="${personName["image"]}"/>
-        <p class="name">${personName["name"]}</p>
-        <a class="watch" href="${personName.link}"><i class="ri-video-line"></i> stream</a>
-    </div>`;
-};
+const first_output_animes = first_display_animes.map((first_display) =>{
+    const first_img = first_display.image;
+    const first_name = first_display.name;
+    const first_link = first_display.link;
 
-myOutput.innerHTML = output;
+    const initial_anime_output = `
+        <div class="animes">
+            <img src="${first_img}"/>
+            <p class="name">${first_name}</p>
+            <a href="${first_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+        </div>`
 
-var sorted = names.sort((a, b)=>{
-    if(a.name < b.name){
-        return -1;
-    }
-    if(a.name > b.name){
-        return 1;
-    }
-    return 0;
-});
-
-var output2 = "";
-for(let sortedName of names){
-    output2+=`
-    <div class="anime">
-        <img src="${sortedName["image"]}"/>
-        <p class="name">${sortedName["name"]}</p>
-        <a class="watch" href="${sortedName["link"]}"><i class="ri-video-line"></i> stream</a>
-    </div>`;
-};
+    myOutput.innerHTML+=initial_anime_output;
+})
 
 const sortButton = document.querySelector('.sort');
+
 sortButton.addEventListener("click", ()=>{
-    myOutput.innerHTML = output2;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '337848fd1dmsh7152c94608a87d0p1cca0cjsn3350d457e7b5',
+            'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
+        }
+    };
+    
+    fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
+	.then(response => response.json())
+	.then(response => {
+        const animes = response.data;
+
+        const sorted_animes = animes.sort((a, b)=>{
+            if(a.title > b.title){
+                return 1;
+            }
+            else if(a.title < b.title){
+                return -1;
+            }
+            return 0;
+        });
+
+        sorted_animes.map((sorted_anime) =>{
+            console.log(sorted_anime);
+            const sorted_anime_image = sorted_anime.image;
+            const sorted_anime_title = sorted_anime.title;
+            const sorted_anime_link = sorted_anime.link;
+
+            const output2 = `
+                <div class="anime">
+                    <img src="${sorted_anime_image}"/>
+                    <p class="name">${sorted_anime_title}</p>
+                    <a href="${sorted_anime_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                </div>`
+
+                myOutput.innerHTML+= output2;
+        })
+
+    })
+	.catch(err => console.error(err));
 });
 
 

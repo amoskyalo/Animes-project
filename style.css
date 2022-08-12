@@ -205,7 +205,6 @@ form i{
     padding: 1rem 1rem 0 1rem;
 }
 .animes, .anime{
-    height: fit-content;
     padding-bottom: 10px;
     text-align: start;
     background-color: #fff;
