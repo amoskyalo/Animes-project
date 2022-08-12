@@ -11,9 +11,10 @@ ul{
 }
 
 body{
-    background-color: #eee;
+    background-color: #0d1117;
     padding: 0;
     margin: 0;
+    color: #fff;
 }
 nav{
     display: flex;
@@ -151,6 +152,7 @@ main{
 .sort-btns{
     display: flex;
     justify-content: center;
+    margin-top: 3rem;
 }
 .sort-btns button{
     background-color: #1d9bf0;
@@ -160,6 +162,7 @@ main{
     padding: 8px 8px;
     outline: none;
     margin: 0 1rem;
+    cursor: pointer;
 }
 form{
     border: 1px solid rgb(168, 165, 165);
@@ -185,10 +188,10 @@ form i{
     border-radius: 50%;
 }
 .contents{
-    width: 50%;
+    width: 75%;
     margin: 2rem auto 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
     padding: 1rem 1rem 0 1rem;
 }
@@ -196,8 +199,8 @@ form i{
     height: fit-content;
     padding-bottom: 10px;
     text-align: start;
-    background-color: #eee;
-    box-shadow: 0 0 3px #000;
+    background-color: #0d1117;
+    box-shadow: 0 0 5px #fff;
     transition: all 0.3s;
     border-radius: 5px;
 }
@@ -285,7 +288,7 @@ form i{
  }
  .divider{
      border-top: 1px solid rgb(184, 179, 179);
-     width: 50%;
+     width: 75%;
      margin: 0 auto 1rem;
  }
  .social{
@@ -310,7 +313,10 @@ form i{
      font-size: 20px;
  }
 @media(max-width: 768px){
+    footer{
+        padding: 0;
+    }
     .divider{
-        width: 100%;
+        width: 90%;
     }
 }
