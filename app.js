@@ -79,11 +79,20 @@ const first_output_animes = first_display_animes.map((first_display) =>{
     const first_link = first_display.link;
     const first_desc = first_display.desc;
 
+    function truncateDesc(str, num){
+        if(str.length > num){
+            return str.slice(0, num) + "..." + `<a href="${first_link}">read more</a>`;
+        }
+        return str
+    }
+    const first_info = truncateDesc(first_desc, 100);
+    console.log(first_info);
+
     const initial_anime_output = `
         <div class="animes">
             <img src="${first_img}"/>
             <p class="name">${first_name}</p>
-            <p class="info">${first_desc}</p>
+            <p class="info">${first_info}</p>
             <p class="info-btn"><i class="ri-information-fill"></i></p>
             <a href="${first_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
         </div>`

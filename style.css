@@ -273,6 +273,9 @@ form i{
     display: none;
     font-size: 12px;
 }
+.contents>div .info a{
+    color: #1d9bf0;
+}
 .contents>div .info-btn{
     color: #1d9bf0;
     margin-left: 1rem;
