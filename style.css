@@ -83,7 +83,7 @@ nav{
          z-index: 2;
      }
      .active{
-         top: 5rem;
+         top: 4rem;
      }
      .nav-links .nav-link{
          background-color: transparent;
@@ -251,7 +251,6 @@ form i{
 }
 .anime{
     box-shadow: 0 0 5px #999;
-    /* border: 1px solid; */
 }
 .contents>div{
     transition: all 0.7s ease-in-out;
