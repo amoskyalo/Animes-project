@@ -42,13 +42,13 @@ const first_display_animes = [
         "name": "One piece",
         "image": "one-piece.jpeg",
         "link": "https://www.youtube.com/watch?v=-3g8Nnehdao",
-        "desc": "The displayed texts are children of the divs demo, so you can simply get the .text child of the div clicked. Here's how I would do it."
+        "desc": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece."
     },
     {
         "name": "Anime girl",
         "image": "anime-girl.jpg",
         "link": "https://www.bilibili.tv/en/video/2049239198",
-        "desc": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece."
+        "desc": "The series focuses on the existence of a supernatural system that allows people to take revenge by having other people sent to Hell via the services of the mysterious title character and her assistants who implement this system"
     },
     {
         "name": "Inuyasha",
