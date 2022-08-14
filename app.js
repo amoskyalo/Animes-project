@@ -107,16 +107,19 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 .then(response => {
     const animes = response.data;
 
-    //view all function
+    //all animes
     animes.map((all_animes) =>{
         const all_animes_images = all_animes.image;
         const all_animes_title = all_animes.title;
         const all_animes_link = all_animes.link;
+        const all_anime_info = all_animes.synopsis;
 
         output1+=`
             <div class="anime">
                 <img src="${all_animes_images}"/>
                 <p class="name">${all_animes_title}</p>
+                <p class="info">${all_anime_info}</p>
+                <p class="info-btn"><i class="ri-information-fill"></i></p>
                 <a href="${all_animes_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
             </div>
         `
@@ -132,7 +135,7 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
         return 0;
     });
 
-    //view sorted animes
+    //sorted animes
     sorted_animes.map((sorted_anime) =>{
         const sorted_anime_image = sorted_anime.image;
         const sorted_anime_title = sorted_anime.title;
@@ -149,7 +152,7 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 })
 .catch(err => console.error(err));
 
-//sorting buttons
+//button functionalities
 const display_sort_button = document.querySelector('.sort');
 const sort_buttons = document.querySelector('.view');
 
@@ -164,7 +167,28 @@ display_sort_button.addEventListener('click', ()=>{
 const viewAll = document.querySelector('.all');
 viewAll.addEventListener("click", ()=>{
     myOutput.innerHTML = output1;
+    console.log('hello');
+    const allAnimesInfoDivs = document.querySelectorAll('.anime');
+    for(let allAnimeInfoDiv of allAnimesInfoDivs){
+        allAnimeInfoDiv.addEventListener('mouseover', ()=>{
+            const allAnimeInfo = allAnimeInfoDiv.querySelector('.info');
+            const allAnimeInfoButton = allAnimeInfoDiv.querySelector('.info-btn');
+            const allAnimeWatchButton = allAnimeInfoDiv.querySelector('.watch');
+            allAnimeInfo.style.display ='block';
+            allAnimeInfoButton.style.display = 'none';
+            allAnimeWatchButton.style.display = 'block';
+        });
+        allAnimeInfoDiv.addEventListener('mouseout', ()=>{
+            const allAnimeInfo = allAnimeInfoDiv.querySelector('.info');
+            const allAnimeInfoButton = allAnimeInfoDiv.querySelector('.info-btn');
+            const allAnimeWatchButton = allAnimeInfoDiv.querySelector('.watch');
+            allAnimeInfo.style.display ='none';
+            allAnimeInfoButton.style.display = 'block';
+            allAnimeWatchButton.style.display = 'none';
+        });
+    }
 });
+
 
 const sort_by_name = document.querySelector('.sort-by-name');
 sort_by_name.addEventListener('click', ()=>{
