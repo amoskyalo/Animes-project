@@ -100,6 +100,21 @@ const first_output_animes = first_display_animes.map((first_display) =>{
     myOutput.innerHTML+=initial_anime_output;
 });
 
+
+//dark theme
+const body = document.querySelector('.body');
+const animes = document.querySelectorAll('.animes');
+const themeButton = document.querySelector('.theme-toggler');
+
+function darkMode(){
+    for(let anime of animes){
+        anime.classList.toggle('contents-back');
+    };
+    body.classList.toggle("body-back");
+}
+
+themeButton.addEventListener('click', darkMode);
+
 //all animes function
 var output1 = "";
 var output2 = "";
@@ -121,7 +136,16 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
         const all_animes_images = all_animes.image;
         const all_animes_title = all_animes.title;
         const all_animes_link = all_animes.link;
-        const all_anime_info = all_animes.synopsis;
+        const all_animes_info = all_animes.synopsis;
+
+        function truncateDesccription(str, num){
+            if(str.length > num){
+                return str.slice(0, num) + "..." + `<a href="${all_animes_link}">read more</a>`;
+            }
+            return str;
+        };
+
+        const all_anime_info = truncateDesccription(all_animes_info, 100);
 
         output1+=`
             <div class="anime">
@@ -134,6 +158,8 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
         `
     });
 
+
+     //sorted animes
     const sorted_animes = animes.sort((a, b)=>{
         if(a.title > b.title){
             return 1;
@@ -143,8 +169,6 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
         }
         return 0;
     });
-
-    //sorted animes
     sorted_animes.map((sorted_anime) =>{
         const sorted_anime_image = sorted_anime.image;
         const sorted_anime_title = sorted_anime.title;
@@ -176,8 +200,9 @@ display_sort_button.addEventListener('click', ()=>{
 const viewAll = document.querySelector('.all');
 viewAll.addEventListener("click", ()=>{
     myOutput.innerHTML = output1;
-    console.log('hello');
+
     const allAnimesInfoDivs = document.querySelectorAll('.anime');
+
     for(let allAnimeInfoDiv of allAnimesInfoDivs){
         allAnimeInfoDiv.addEventListener('mouseover', ()=>{
             const allAnimeInfo = allAnimeInfoDiv.querySelector('.info');
@@ -227,18 +252,6 @@ const a3 = annotate(subScription, {type: 'crossed-off', color: 'red', strokeWidt
 const ag = annotationGroup([a3, a1, a2]);
 ag.show();
 
-
-//dark theme
-const body = document.querySelector('.body');
-const animes = document.querySelectorAll('.animes');
-const themeButton = document.querySelector('.theme-toggler');
-
-themeButton.addEventListener('click', ()=>{
-    for(let anime of animes){
-        anime.classList.toggle('contents-back');
-    };
-    body.classList.toggle("body-back");
-});
 
 
 //view anime info 

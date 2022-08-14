@@ -245,15 +245,13 @@ form i{
 .animes, .anime{
     padding-bottom: 10px;
     text-align: start;
-    background-color: #fff;
     box-shadow: 0 0 3px #000;
     transition: all 0.3s;
     border-radius: 5px;
 }
 .anime{
-    background-color: rgb(30,30,30);
-    box-shadow: 0 0 5px #fff;
-    color: #fff;
+    box-shadow: 0 0 5px #999;
+    /* border: 1px solid; */
 }
 .contents>div{
     transition: all 0.7s ease-in-out;
