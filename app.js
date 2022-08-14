@@ -66,7 +66,7 @@ const first_display_animes = [
         "name": "Bleach",
         "image": "bleach.jpg",
         "link": "https://www.youtube.com/watch?v=iutQJzAXiWo",
-        "desc": "The displayed texts are children of the divs demo, so you can simply get the .text child of the div clicked. Here's how I would do it."
+        "desc": "Ichigo Kurosaki never asked for the ability to see ghosts -- he was born with the gift. When his family is attacked by a Hollow -- a malevolent lost soul -- Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace.        "
     }
     
 ];
