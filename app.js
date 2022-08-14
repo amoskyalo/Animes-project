@@ -23,43 +23,51 @@ const first_display_animes = [
     {
         "name": "Blood of zeus",
         "image": "zeus.png",
-        "link": "https://www.netflix.com/ke/title/81001988?source=35"
+        "link": "https://www.netflix.com/ke/title/81001988?source=35",
+        "desc": "Chronicles the illegitimate son of Zeus, a young man tasked with saving heaven and earth despite the interference of a vengeful goddess and her monstrous forces."
     },
     {
         "name": "Naruto",
         "image": "naruto.jpg",
-        "link": "https://www.youtube.com/watch?v=Y9P1EhndE0w"
+        "link": "https://www.youtube.com/watch?v=Y9P1EhndE0w",
+        "desc": "Naruto, an adolescent ninja, dreams of becoming the Hokage in his village."
     },
     {
         "name": "Demon slayer",
         "image": "slayer.jpeg",
-        "link": "https://www.imdb.com/video/vi2476588825/?ref_=tt_vi_i_1"
+        "link": "https://www.imdb.com/video/vi2476588825/?ref_=tt_vi_i_1",
+        "desc": " After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost."
     },
     {
         "name": "One piece",
         "image": "one-piece.jpeg",
-        "link": "https://www.youtube.com/watch?v=-3g8Nnehdao"
+        "link": "https://www.youtube.com/watch?v=-3g8Nnehdao",
+        "desc": "The displayed texts are children of the divs demo, so you can simply get the .text child of the div clicked. Here's how I would do it."
     },
     {
         "name": "Anime girl",
         "image": "anime-girl.jpg",
-        "link": "https://www.bilibili.tv/en/video/2049239198"
+        "link": "https://www.bilibili.tv/en/video/2049239198",
+        "desc": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece."
     },
     {
         "name": "Inuyasha",
         "image": "inuyasha.jpg",
-        "link": "https://www.youtube.com/watch?v=UCFBsLagBPk"
+        "link": "https://www.youtube.com/watch?v=UCFBsLagBPk",
+        "desc": "To defend the Jewel of Four Souls, Inuyasha and Kagome continue to confront the wicked Naraku. Shippo, Miroku and the demon hunter Sango are all assisting them."
     },
     {
         "name": "Fate",
         "image": "fate.jpg",
-        "link": "https://www.youtube.com/watch?v=NPItqNsCXM4"
+        "link": "https://www.youtube.com/watch?v=NPItqNsCXM4",
+        "desc": "It follows a high schooler named Shirou Emiya, who finds himself unwittingly involved in the fifth iteration of a magical battle royale called the Holy Grail War."
     },
     {
         "name": "Bleach",
         "image": "bleach.jpg",
-        "link": "https://www.youtube.com/watch?v=iutQJzAXiWo"
-    },
+        "link": "https://www.youtube.com/watch?v=iutQJzAXiWo",
+        "desc": "The displayed texts are children of the divs demo, so you can simply get the .text child of the div clicked. Here's how I would do it."
+    }
     
 ];
 
@@ -69,17 +77,19 @@ const first_output_animes = first_display_animes.map((first_display) =>{
     const first_img = first_display.image;
     const first_name = first_display.name;
     const first_link = first_display.link;
+    const first_desc = first_display.desc;
 
     const initial_anime_output = `
         <div class="animes">
             <img src="${first_img}"/>
             <p class="name">${first_name}</p>
+            <p class="info">${first_desc}</p>
+            <p class="info-btn"><i class="ri-information-fill"></i></p>
             <a href="${first_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
         </div>`
 
     myOutput.innerHTML+=initial_anime_output;
 });
-
 
 //all animes function
 var output1 = "";
@@ -195,4 +205,29 @@ themeButton.addEventListener('click', ()=>{
         anime.classList.toggle('contents-back');
     };
     body.classList.toggle("body-back");
-})
+});
+
+
+//view anime info 
+const animeDivs = document.querySelectorAll('.animes');
+
+for(let animeDiv of animeDivs){
+    animeDiv.addEventListener('mouseover', ()=>{
+        const animeInfo = animeDiv.querySelector('.info');
+        const infoButton = animeDiv.querySelector('.info-btn');
+        const animeWatchButton = animeDiv.querySelector('.watch');
+        animeInfo.style.display = 'block';
+        infoButton.style.display = 'none';
+        animeWatchButton.style.display = 'block';
+        animeDiv.style.transform = 'scale(1.05)';
+    });
+    animeDiv.addEventListener('mouseout', ()=>{
+        const animeInfo = animeDiv.querySelector('.info');
+        const infoButton = animeDiv.querySelector('.info-btn');
+        const animeWatchButton = animeDiv.querySelector('.watch');
+        animeInfo.style.display = 'none';
+        infoButton.style.display = 'block';
+        animeWatchButton.style.display = 'none';
+        animeDiv.style.transform = 'scale(1.0)';
+    });
+};

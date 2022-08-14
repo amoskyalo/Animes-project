@@ -255,8 +255,8 @@ form i{
     box-shadow: 0 0 5px #fff;
     color: #fff;
 }
-.contents>div:hover{
-    transform: scale(1.03);
+.contents>div{
+    transition: all 0.7s ease-in-out;
 }
 .contents>div img{
     width: 100%;
@@ -266,7 +266,17 @@ form i{
 }
 .contents>div .name{
     font-size: 20px;
-    padding: 0.2rem 1rem 1rem;
+    padding: 0.2rem 1rem 0.5rem;
+}
+.contents>div .info{
+    margin: 0 0.3rem 0.5rem 1rem;
+    display: none;
+    font-size: 12px;
+}
+.contents>div .info-btn{
+    color: red;
+    margin-left: 1rem;
+    font-size: 20px;
 }
 .contents>div .watch{
     margin: 0 0 0 1rem;
@@ -275,6 +285,8 @@ form i{
     background-color: #1d9bf0;
     padding: 3px;
     border-radius: 3px;
+    display: none;
+    width: fit-content;
 }
 .contents>div .watch i{
     vertical-align: middle;
@@ -327,7 +339,7 @@ form i{
         padding-bottom: 10px;
     }
     .contents>div .name{
-        padding-bottom: 8px;
+        padding-bottom: 4px;
     }
     .contents>div .watch{
         font-size: 15px;
