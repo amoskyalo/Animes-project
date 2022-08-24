@@ -209,7 +209,7 @@ select{
     width: 20%;
     background-color: #fff;
     flex-direction: column;
-    padding: 0 8px 8px;
+    padding: 16px 8px 8px;
     border-radius: 10px;
     z-index: 10;
     display: none;
@@ -222,7 +222,7 @@ select{
     background-color: rgb(168, 165, 165);
     padding: 8px 8px;
     margin: 5px;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .view span{
