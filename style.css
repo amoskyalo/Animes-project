@@ -209,30 +209,31 @@ select{
     width: 20%;
     background-color: #fff;
     flex-direction: column;
-    text-align: center;
     padding: 0 8px 8px;
     border-radius: 10px;
     z-index: 10;
     display: none;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
 }
 .view button{
     background-color: rgb(168, 165, 165);
-    padding: 4px 8px;
-    margin: 5px auto;
+    padding: 8px 8px;
+    margin: 5px;
     font-size: 10px;
 }
 
 .view span{
     position: absolute;
-    right: -0.4rem;
-    top: -0.4rem;
+    right: -0.2rem;
+    top: -0.2rem;
     background-color: rgb(168, 165, 165);
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
-    font-size: 10px;
+    height: 18px;
+    width: 18px;
+    font-size: 15px;
     cursor: pointer;
     display: flex;
     justify-content: center;
