@@ -197,11 +197,16 @@ form i{
     padding: 5px;
     border-radius: 50%;
 }
+select{
+    margin-left: 1rem;
+    padding: 0px;
+    outline: none;
+}
 .view{
     position: absolute;
     right: 30%;
-    top: 70%;
-    width: 6%;
+    top: 110%;
+    width: 20%;
     background-color: #fff;
     flex-direction: column;
     text-align: center;
@@ -209,20 +214,20 @@ form i{
     border-radius: 10px;
     z-index: 10;
     display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .view button{
     background-color: rgb(168, 165, 165);
-    padding: 8px 0;
-    width: 100%;
+    padding: 4px 8px;
     margin: 5px auto;
+    font-size: 10px;
 }
-.view button:first-of-type{
-    margin-top: 1rem;
-}
+
 .view span{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -0.4rem;
+    top: -0.4rem;
     background-color: rgb(168, 165, 165);
     border-radius: 50%;
     height: 15px;

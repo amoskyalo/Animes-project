@@ -86,7 +86,6 @@ const first_output_animes = first_display_animes.map((first_display) =>{
         return str
     }
     const first_info = truncateDesc(first_desc, 100);
-    console.log(first_info);
 
     const initial_anime_output = `
         <div class="animes">
@@ -182,6 +181,48 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
             </div>`
     });
 
+    //animes gernes
+   const textElements = document.querySelectorAll('.options');
+
+   for(let textElement of textElements){
+       textElement.addEventListener('click', ()=>{
+        let gerneAnimes = [];
+        function animesGerne(value){
+            for(let i = 0; i < animes.length; i++){
+                if(animes[i].genres[0] === value){
+                    gerneAnimes.push(animes[i]);
+                }
+            }
+        }
+
+        const text = textElement.textContent;
+        animesGerne(text);
+        console.log(gerneAnimes);
+
+        gerneAnimes.map( (gerneAnime) =>{
+            const gerneImage = gerneAnime.image;
+            const gerneTitle = gerneAnime.title;
+            const gerneLink = gerneAnime.link;
+            const gerneSynopsis = gerneAnime.synopsis;
+
+            console.log(gerneAnime);
+
+            var output3 = '';
+
+            output3 += `
+                <div class="anime">
+                    <img src="${gerneImage}"/>
+                    <p class="name">${gerneTitle}</p>
+                    <p class="info">${gerneSynopsis}</p>
+                    <p class="info-btn"><i class="ri-information-fill"></i></p>
+                    <a href="${gerneLink}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                </div>`
+
+            myOutput.innerHTML = output3;
+            sort_buttons.style.display = "none";
+        })
+       })
+   }
 })
 .catch(err => console.error(err));
 
