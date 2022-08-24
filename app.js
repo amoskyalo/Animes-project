@@ -134,6 +134,7 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 .then(response => response.json())
 .then(response => {
     const animes = response.data;
+    console.log(animes);
 
     //all animes
     animes.map((all_animes) =>{
@@ -195,7 +196,6 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
        textElement.addEventListener('click', ()=>{
            output3 = [];
            const text = textElement.textContent;
-           console.log(text);
 
            animes.map( (animesGerne) =>{
             const animeGerneValue = animesGerne.genres;
@@ -245,8 +245,6 @@ display_sort_button.addEventListener('click', ()=>{
     remove_view.addEventListener('click', ()=>{
     sort_buttons.style.display = "none";
     });
-    // output3 = [];
-    // myOutput.innerHTML = output3
 });
 
 const viewAll = document.querySelector('.all');
