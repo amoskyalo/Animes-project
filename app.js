@@ -134,7 +134,6 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 .then(response => response.json())
 .then(response => {
     const animes = response.data;
-    console.log(animes);
 
     //all animes
     animes.map((all_animes) =>{

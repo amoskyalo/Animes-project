@@ -219,21 +219,22 @@ select{
     justify-content: start;
 }
 .view button{
-    background-color: rgb(168, 165, 165);
+    background-color: #7892bd;
     padding: 8px 8px;
     margin: 5px;
     font-size: 16px;
+    border-radius: 16px;
 }
 
 .view span{
     position: absolute;
-    right: -0.2rem;
-    top: -0.2rem;
-    background-color: rgb(168, 165, 165);
+    right: 0;
+    top: 0;
+    background-color: #7892bd;
     border-radius: 50%;
     height: 18px;
     width: 18px;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     display: flex;
     justify-content: center;
