@@ -117,6 +117,8 @@ themeButton.addEventListener('click', darkMode);
 //all animes function
 var output1 = "";
 var output2 = "";
+var output3 = "";
+
 const options = {
     method: 'GET',
     headers: {
@@ -197,17 +199,12 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 
         const text = textElement.textContent;
         animesGerne(text);
-        console.log(gerneAnimes);
 
         gerneAnimes.map( (gerneAnime) =>{
             const gerneImage = gerneAnime.image;
             const gerneTitle = gerneAnime.title;
             const gerneLink = gerneAnime.link;
             const gerneSynopsis = gerneAnime.synopsis;
-
-            console.log(gerneAnime);
-
-            var output3 = '';
 
             output3 += `
                 <div class="anime">
