@@ -165,7 +165,7 @@ main{
     position: relative;
 }
 .sort-btns button{
-    background-color: #1d9bf0;
+    background-color: #7892bd;
     border: none;
     border-radius: 5px;
     color: white;
@@ -173,6 +173,7 @@ main{
     outline: none;
     margin: 0 1rem;
     cursor: pointer;
+    font-size: 18px;
 }
 form{
     border: 1px solid rgb(168, 165, 165);
@@ -193,7 +194,7 @@ form input{
 form i{
     color: white;
     font-size: 16px;
-    background-color: #1d9bf0;
+    background-color: #7892bd;
     padding: 5px;
     border-radius: 50%;
 }
@@ -205,7 +206,7 @@ select{
 .view{
     position: absolute;
     right: 30%;
-    top: 110%;
+    top: 100%;
     width: 20%;
     background-color: #fff;
     flex-direction: column;
@@ -217,6 +218,7 @@ select{
     flex-wrap: wrap;
     align-items: start;
     justify-content: start;
+    border: 1px solid #999;
 }
 .view button{
     background-color: #7892bd;
@@ -232,9 +234,9 @@ select{
     top: 0;
     background-color: #7892bd;
     border-radius: 50%;
-    height: 18px;
-    width: 18px;
-    font-size: 16px;
+    height: 24px;
+    width: 24px;
+    font-size: 18px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -328,7 +330,7 @@ select{
         flex-wrap: wrap;
     }
     .view{
-        width: 50%;
+        width: 60%;
         top: 100%;
         right: 20%;
     }
