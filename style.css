@@ -243,6 +243,11 @@ select{
     align-items: center;
     color: #fff;
 }
+
+.divider2{
+    border-bottom: 1px solid #999;
+    margin-top: 2rem;
+}
 .contents{
     width: 75%;
     margin: 2rem auto 0;

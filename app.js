@@ -114,12 +114,13 @@ function darkMode(){
 
 themeButton.addEventListener('click', darkMode);
 
-//all animes function
+//ANIMES FUNCTIONS
 
 //outputs
 var output1 = "";
 var output2 = "";
 var output3 = "";
+var output4 = "";
 
 //fetch
 const options = {
@@ -228,6 +229,52 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
        })
    }
   
+   //searching for animes
+   const searchButton = document.getElementById('search');
+   const searchIcon = document.querySelector('.icon');
+
+   function searchDisplay(){
+        const animesSearch = [];
+        output4 = [];
+
+        for(let i =  0; i < animes.length; i++){
+    
+            const animesSearchTitle = animes[i].title;
+            const animeSearchLowerCase = animesSearchTitle.toLowerCase();
+            const searchValues = searchButton.value;
+            const searchValuesToLowerCase = searchValues.toLowerCase();
+    
+            if(animeSearchLowerCase.includes(searchValuesToLowerCase)){
+                animesSearch.push(animes[i]);
+            };
+        };
+    
+        if(animesSearch == 0){
+            myOutput.innerHTML = "Ooops! No search results";
+        }else if(animesSearch !== 0){
+            animesSearch.map( (animeSearch) =>{
+
+                output4+=`
+                        <div class="anime">
+                            <img src="${animeSearch.image}"/>
+                            <p class="name">${animeSearch.title}</p>
+                            <p class="info">${animeSearch.synopsis}}</p>
+                            <p class="info-btn"><i class="ri-information-fill"></i></p>
+                            <a href="${animeSearch.link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                        </div>
+                        `
+            });
+            myOutput.innerHTML = output4;
+        };
+
+        if(searchButton.value == 0){
+            myOutput.innerHTML = output1;
+        };
+   };
+   searchIcon.addEventListener('click', searchDisplay);
+   searchButton.addEventListener('keydown', searchDisplay);
+  
+
 
 
 })
