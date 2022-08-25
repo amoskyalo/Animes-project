@@ -271,12 +271,10 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
             myOutput.innerHTML = output1;
         };
    };
+
    searchIcon.addEventListener('click', searchDisplay);
    searchButton.addEventListener('keydown', searchDisplay);
   
-
-
-
 })
 .catch(err => console.error(err));
 
