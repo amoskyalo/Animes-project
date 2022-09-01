@@ -348,12 +348,13 @@ select{
         padding: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        height: 10rem;
+        position: relative;
     }
     
     .contents>div img{
-       margin-bottom: 0;
-       padding-bottom: 0;
        border-radius: 5px;
+       height: 10rem;
     }
     .contents>div .name{
         padding-bottom: 4px;
@@ -364,6 +365,8 @@ select{
         padding: 3px;
         border-radius: 3px;
         color: #fff;
+        position: absolute;
+        bottom: 0.5rem;
     }
  }
 
