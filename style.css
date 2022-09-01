@@ -347,7 +347,7 @@ select{
     .contents>div{
         padding: 0;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1.5fr;
         height: 10rem;
         position: relative;
     }
