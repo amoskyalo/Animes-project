@@ -21,52 +21,52 @@ for(const navLink of navLinks){
 //sorting using sort() method:
 const first_display_animes = [
     {
-        "name": "Blood of zeus",
+        "title": "Blood of zeus",
         "image": "zeus.png",
         "link": "https://www.netflix.com/ke/title/81001988?source=35",
-        "desc": "Chronicles the illegitimate son of Zeus, a young man tasked with saving heaven and earth despite the interference of a vengeful goddess and her monstrous forces."
+        "synopsis": "Chronicles the illegitimate son of Zeus, a young man tasked with saving heaven and earth despite the interference of a vengeful goddess and her monstrous forces."
     },
     {
-        "name": "Naruto",
+        "title": "Naruto",
         "image": "naruto.jpg",
         "link": "https://www.youtube.com/watch?v=Y9P1EhndE0w",
-        "desc": "Naruto, an adolescent ninja, dreams of becoming the Hokage in his village."
+        "synopsis": "Naruto, an adolescent ninja, dreams of becoming the Hokage in his village."
     },
     {
-        "name": "Demon slayer",
+        "title": "Demon slayer",
         "image": "slayer.jpeg",
         "link": "https://www.imdb.com/video/vi2476588825/?ref_=tt_vi_i_1",
-        "desc": " After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost."
+        "synopsis": " After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost."
     },
     {
-        "name": "One piece",
+        "title": "One piece",
         "image": "one-piece.jpeg",
         "link": "https://www.youtube.com/watch?v=-3g8Nnehdao",
-        "desc": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece."
+        "synopsis": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece."
     },
     {
-        "name": "Anime girl",
+        "title": "Anime girl",
         "image": "anime-girl.jpg",
         "link": "https://www.bilibili.tv/en/video/2049239198",
-        "desc": "The series focuses on the existence of a supernatural system that allows people to take revenge by having other people sent to Hell via the services of the mysterious title character and her assistants who implement this system"
+        "synopsis": "The series focuses on the existence of a supernatural system that allows people to take revenge by having other people sent to Hell via the services of the mysterious title character and her assistants who implement this system"
     },
     {
-        "name": "Inuyasha",
+        "title": "Inuyasha",
         "image": "inuyasha.jpg",
         "link": "https://www.youtube.com/watch?v=UCFBsLagBPk",
-        "desc": "To defend the Jewel of Four Souls, Inuyasha and Kagome continue to confront the wicked Naraku. Shippo, Miroku and the demon hunter Sango are all assisting them."
+        "synopsis": "To defend the Jewel of Four Souls, Inuyasha and Kagome continue to confront the wicked Naraku. Shippo, Miroku and the demon hunter Sango are all assisting them."
     },
     {
-        "name": "Fate",
+        "title": "Fate",
         "image": "fate.jpg",
         "link": "https://www.youtube.com/watch?v=NPItqNsCXM4",
-        "desc": "It follows a high schooler named Shirou Emiya, who finds himself unwittingly involved in the fifth iteration of a magical battle royale called the Holy Grail War."
+        "synopsis": "It follows a high schooler named Shirou Emiya, who finds himself unwittingly involved in the fifth iteration of a magical battle royale called the Holy Grail War."
     },
     {
-        "name": "Bleach",
+        "title": "Bleach",
         "image": "bleach.jpg",
         "link": "https://www.youtube.com/watch?v=iutQJzAXiWo",
-        "desc": "Ichigo Kurosaki never asked for the ability to see ghosts -- he was born with the gift. When his family is attacked by a Hollow -- a malevolent lost soul -- Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace.        "
+        "synopsis": "Ichigo Kurosaki never asked for the ability to see ghosts -- he was born with the gift. When his family is attacked by a Hollow -- a malevolent lost soul -- Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace.        "
     }
     
 ];
@@ -75,9 +75,9 @@ const myOutput = document.querySelector('.contents');
 
 const first_output_animes = first_display_animes.map((first_display) =>{
     const first_img = first_display.image;
-    const first_name = first_display.name;
+    const first_name = first_display.title;
     const first_link = first_display.link;
-    const first_desc = first_display.desc;
+    const first_desc = first_display.synopsis;
 
     function truncateDesc(str, num){
         if(str.length > num){
@@ -140,7 +140,18 @@ const options = {
 fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 .then(response => response.json())
 .then(response => {
-    const animes = response.data;
+    var animes = [];
+    
+    const animesPush = response.data;
+    animesPush.map( (animePush) =>{
+        animes.push(animePush);
+    });
+    
+    const animesPush2 = first_display_animes;
+    animesPush2.map( (animePush2) =>{
+        animes.push(animePush2);
+    })
+    console.log(animes)
 
     //slice anime names.
     function sliceName(str, num){
