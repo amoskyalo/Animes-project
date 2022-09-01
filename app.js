@@ -89,11 +89,14 @@ const first_output_animes = first_display_animes.map((first_display) =>{
 
     const initial_anime_output = `
         <div class="animes">
-            <img src="${first_img}"/>
-            <p class="name">${first_name}</p>
-            <p class="info">${first_info}</p>
-            <p class="info-btn"><i class="ri-information-fill"></i></p>
-            <a href="${first_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+            <div class="anime-img">
+                <img src="${first_img}"/>
+            </div>
+            <div class="anime-contents">
+                <p class="name">${first_name}</p>
+                <p class="info">${first_info}</p>
+                <a href="${first_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+            </div>
         </div>`
 
     myOutput.innerHTML+=initial_anime_output;
@@ -114,7 +117,9 @@ function darkMode(){
 
 themeButton.addEventListener('click', darkMode);
 
-//ANIMES FUNCTIONS
+
+
+//ANIMES FUNCTIONS:
 
 //outputs
 var output1 = "";
@@ -122,7 +127,8 @@ var output2 = "";
 var output3 = "";
 var output4 = "";
 
-//fetch
+
+//fetch the animes API
 const options = {
     method: 'GET',
     headers: {
@@ -136,10 +142,19 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 .then(response => {
     const animes = response.data;
 
+    //slice anime names.
+    function sliceName(str, num){
+        if(str.length > num){
+            return str.slice(0, num) + "...";
+        }
+        return str;
+    };
+
+
     //all animes
     animes.map((all_animes) =>{
         const all_animes_images = all_animes.image;
-        const all_animes_title = all_animes.title;
+        const all_animes_title = sliceName(all_animes.title, 10);
         const all_animes_link = all_animes.link;
         const all_animes_info = all_animes.synopsis;
 
@@ -154,11 +169,14 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 
         output1+=`
             <div class="anime">
-                <img src="${all_animes_images}"/>
-                <p class="name">${all_animes_title}</p>
-                <p class="info">${all_anime_info}</p>
-                <p class="info-btn"><i class="ri-information-fill"></i></p>
-                <a href="${all_animes_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                <div class="anime-img">
+                    <img src="${all_animes_images}"/>
+                </div>
+                <div class="anime-contents">
+                    <p class="name">${all_animes_title}</p>
+                    <p class="info">${all_anime_info}</p>
+                    <a href="${all_animes_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                </div>
             </div>
         `
     });
@@ -176,21 +194,34 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
     });
     sorted_animes.map((sorted_anime) =>{
         const sorted_anime_image = sorted_anime.image;
-        const sorted_anime_title = sorted_anime.title;
+        const sorted_anime_title = sliceName(sorted_anime.title, 10);
         const sorted_anime_link = sorted_anime.link;
+        const sorted_anime_synopsis = sorted_anime.synopsis;
+
+        function sortSynopsis(str, num){
+            if(str.length > num){
+                return str.slice(0, num) + "..." + `<a href="${sorted_anime_link}">read more</a>`
+            }
+            return str;
+        }
+
+        const sortedAnimeSynopsis = sortSynopsis(sorted_anime_synopsis, 100);
 
         output2 += `
             <div class="anime">
-                <img src="${sorted_anime_image}"/>
-                <p class="name">${sorted_anime_title}</p>
-                <a href="${sorted_anime_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                <div class="anime-image">
+                    <img src="${sorted_anime_image}"/>
+                </div>
+                <div class="anime-contents">
+                    <p class="name">${sorted_anime_title}</p>
+                    <p class="info">${sortedAnimeSynopsis}</p>
+                    <a href="${sorted_anime_link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                </div>
             </div>` 
     });
 
     //animes gernes
    const textElements = document.querySelectorAll('.options');
-
-   
 
    for(let textElement of textElements){
        textElement.addEventListener('click', ()=>{
@@ -207,28 +238,40 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 
                 animeGernes.map( (animeGernesOutput) =>{
                     const animeGerneImage = animeGernesOutput.image;
-                    const animeGerneTitle = animeGernesOutput.title;
+                    const animeGerneTitle = sliceName(animeGernesOutput.title, 10);
                     const animeGerneLink = animeGernesOutput.link;
-                    const animeGerneSynopsis= animeGernesOutput.synopsis;
+                    const animeGerneSynopsi= animeGernesOutput.synopsis;
                     
+                    function animeGerne(str, num){
+                        if(str.length > num){
+                            return str.slice(0, num) + "..." + `<a href="${animeGerneLink}">read more</a>`
+                        }
+                        return str;
+                    };
+
+                    const animeGerneSynopsis = animeGerne(animeGerneSynopsi, 100);
+
                     output3+=`
                     <div class="anime">
-                        <img src="${animeGerneImage}"/>
-                        <p class="name">${animeGerneTitle}</p>
-                        <p class="info">${animeGerneSynopsis}</p>
-                        <p class="info-btn"><i class="ri-information-fill"></i></p>
-                        <a href="${animeGerneLink}" class="watch"> <i class="ri-video-line"></i>stream</a>
-                     </div>
-                     `
-                })
-            }
-        })
+                        <div class="anime-image">
+                            <img src="${animeGerneImage}"/>
+                        </div>
+                        <div class="anime-contents">
+                            <p class="name">${animeGerneTitle}</p>
+                            <p class="info">${animeGerneSynopsis}</p>
+                            <a href="${animeGerneLink}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                        </div>
+                    </div>` 
+                });
+            };
+        });
 
         myOutput.innerHTML = output3;
         sort_buttons.style.display = "none";
-       })
+       });
    }
   
+   
    //searching for animes
    const searchButton = document.getElementById('search');
    const searchIcon = document.querySelector('.icon');
@@ -256,11 +299,14 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 
                 output4+=`
                         <div class="anime">
-                            <img src="${animeSearch.image}"/>
-                            <p class="name">${animeSearch.title}</p>
-                            <p class="info">${animeSearch.synopsis}}</p>
-                            <p class="info-btn"><i class="ri-information-fill"></i></p>
-                            <a href="${animeSearch.link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                            <div class="anime-img">
+                                <img src="${animeSearch.image}"/>
+                            </div>
+                            <div class="anime-contents">
+                                <p class="name">${animeSearch.title}</p>
+                                <p class="info">${animeSearch.synopsis}}</p>
+                                <a href="${animeSearch.link}" class="watch"> <i class="ri-video-line"></i>stream</a>
+                            </div>
                         </div>
                         `
             });
@@ -294,27 +340,6 @@ display_sort_button.addEventListener('click', ()=>{
 const viewAll = document.querySelector('.all');
 viewAll.addEventListener("click", ()=>{
     myOutput.innerHTML = output1;
-
-    const allAnimesInfoDivs = document.querySelectorAll('.anime');
-
-    for(let allAnimeInfoDiv of allAnimesInfoDivs){
-        allAnimeInfoDiv.addEventListener('mouseover', ()=>{
-            const allAnimeInfo = allAnimeInfoDiv.querySelector('.info');
-            const allAnimeInfoButton = allAnimeInfoDiv.querySelector('.info-btn');
-            const allAnimeWatchButton = allAnimeInfoDiv.querySelector('.watch');
-            allAnimeInfo.style.display ='block';
-            allAnimeInfoButton.style.display = 'none';
-            allAnimeWatchButton.style.display = 'block';
-        });
-        allAnimeInfoDiv.addEventListener('mouseout', ()=>{
-            const allAnimeInfo = allAnimeInfoDiv.querySelector('.info');
-            const allAnimeInfoButton = allAnimeInfoDiv.querySelector('.info-btn');
-            const allAnimeWatchButton = allAnimeInfoDiv.querySelector('.watch');
-            allAnimeInfo.style.display ='none';
-            allAnimeInfoButton.style.display = 'block';
-            allAnimeWatchButton.style.display = 'none';
-        });
-    }
 });
 
 
@@ -345,29 +370,3 @@ const a2 = annotate(myQuote, {type: 'underline', color: 'yellow', strokeWidth: 0
 const a3 = annotate(subScription, {type: 'crossed-off', color: 'red', strokeWidth: 3, iterations: 1})
 const ag = annotationGroup([a3, a1, a2]);
 ag.show();
-
-
-
-//view anime info 
-const animeDivs = document.querySelectorAll('.animes');
-
-for(let animeDiv of animeDivs){
-    animeDiv.addEventListener('mouseover', ()=>{
-        const animeInfo = animeDiv.querySelector('.info');
-        const infoButton = animeDiv.querySelector('.info-btn');
-        const animeWatchButton = animeDiv.querySelector('.watch');
-        animeInfo.style.display = 'block';
-        infoButton.style.display = 'none';
-        animeWatchButton.style.display = 'block';
-        animeDiv.style.transform = 'scale(1.05)';
-    });
-    animeDiv.addEventListener('mouseout', ()=>{
-        const animeInfo = animeDiv.querySelector('.info');
-        const infoButton = animeDiv.querySelector('.info-btn');
-        const animeWatchButton = animeDiv.querySelector('.watch');
-        animeInfo.style.display = 'none';
-        infoButton.style.display = 'block';
-        animeWatchButton.style.display = 'none';
-        animeDiv.style.transform = 'scale(1.0)';
-    });
-};

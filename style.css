@@ -104,6 +104,8 @@ nav{
          font-size: 25px;
      }
  }
+
+
 header{
     margin-top: 4rem;
     text-align: center;
@@ -281,17 +283,12 @@ select{
 }
 .contents>div .info{
     margin: 0 0.3rem 0.5rem 1rem;
-    display: none;
     font-size: 12px;
 }
 .contents>div .info a{
     color: #1d9bf0;
 }
-.contents>div .info-btn{
-    color: #1d9bf0;
-    margin-left: 1rem;
-    font-size: 20px;
-}
+
 .contents>div .watch{
     margin: 0 0 0 1rem;
     font-size: 18px;
@@ -299,7 +296,6 @@ select{
     background-color: #1d9bf0;
     padding: 3px;
     border-radius: 3px;
-    display: none;
     width: fit-content;
 }
 .contents>div .watch i{
@@ -349,8 +345,15 @@ select{
        justify-self: center;
     }
     .contents>div{
-        height: fit-content;
-        padding-bottom: 10px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .contents>div img{
+       margin-bottom: 0;
+       padding-bottom: 0;
+       border-radius: 5px;
     }
     .contents>div .name{
         padding-bottom: 4px;
