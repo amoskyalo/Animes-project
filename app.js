@@ -258,6 +258,9 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
 
 
 //button functionalities
+const display_sort_button = document.querySelector('.sort');
+const sort_buttons = document.querySelector('.view');
+
 display_sort_button.addEventListener('click', ()=>{
     sort_buttons.style.display = 'flex';
     const remove_view = document.querySelector('.no-view');
@@ -270,9 +273,6 @@ const viewAll = document.querySelector('.all');
         viewAll.addEventListener("click", ()=>{
             animeParent.innerHTML = output1;
 });
-
-const display_sort_button = document.querySelector('.sort');
-const sort_buttons = document.querySelector('.view');
 
 
 const sort_by_name = document.querySelector('.sort-by-name');
