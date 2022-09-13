@@ -139,11 +139,6 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
                 </div>
             </div>`
 
-        const viewAll = document.querySelector('.all');
-        viewAll.addEventListener("click", ()=>{
-            animeParent.innerHTML = output1;
-        });
-
 
         //sorted animes
         const sorted_animes = datas.sort((a, b)=>{
@@ -241,7 +236,7 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
                             </div>
                             <div class="anime-contents">
                                 <p class="name">${title}</p>
-                                <p class="info">${synopsis}}</p>
+                                <p class="info">${synopsis}</p>
                                 <a href="${animeSearch.link}" class="watch"> <i class="ri-video-line"></i>stream</a>
                             </div>
                         </div>
@@ -254,18 +249,15 @@ fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100', options)
             animeParent.innerHTML = output1;
         };
    };
-
    searchIcon.addEventListener('click', searchDisplay);
    searchButton.addEventListener('keydown', searchDisplay);
   
 })
 .catch(err => console.error(err));
 
+
+
 //button functionalities
-const display_sort_button = document.querySelector('.sort');
-const sort_buttons = document.querySelector('.view');
-
-
 display_sort_button.addEventListener('click', ()=>{
     sort_buttons.style.display = 'flex';
     const remove_view = document.querySelector('.no-view');
@@ -273,6 +265,15 @@ display_sort_button.addEventListener('click', ()=>{
     sort_buttons.style.display = "none";
     });
 });
+
+const viewAll = document.querySelector('.all');
+        viewAll.addEventListener("click", ()=>{
+            animeParent.innerHTML = output1;
+});
+
+const display_sort_button = document.querySelector('.sort');
+const sort_buttons = document.querySelector('.view');
+
 
 const sort_by_name = document.querySelector('.sort-by-name');
 sort_by_name.addEventListener('click', ()=>{
