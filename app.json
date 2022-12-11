@@ -1,59 +1,65 @@
 [
-    {
-        "title": "Blood of zeus",
-        "image": "zeus.png",
-        "link": "https://www.netflix.com/ke/title/81001988?source=35",
-        "synopsis": "Chronicles the illegitimate son of Zeus, a young man tasked with saving heaven and earth despite the interference of a vengeful goddess and her monstrous forces.",
-        "genres": []
-    },
-    {
-        "title": "Naruto",
-        "image": "naruto.jpg",
-        "link": "https://www.youtube.com/watch?v=Y9P1EhndE0w",
-        "synopsis": "Naruto, an adolescent ninja, dreams of becoming the Hokage in his village.",
-        "genres": []
-    },
-    {
-        "title": "Demon slayer",
-        "image": "slayer.jpeg",
-        "link": "https://www.imdb.com/video/vi2476588825/?ref_=tt_vi_i_1",
-        "synopsis": " After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost.",
-        "genres": []
-    },
-    {
-        "title": "One piece",
-        "image": "one-piece.jpeg",
-        "link": "https://www.youtube.com/watch?v=-3g8Nnehdao",
-        "synopsis": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece.",
-        "genres": []
-    },
-    {
-        "title": "Anime girl",
-        "image": "anime-girl.jpg",
-        "link": "https://www.bilibili.tv/en/video/2049239198",
-        "synopsis": "The series focuses on the existence of a supernatural system that allows people to take revenge by having other people sent to Hell via the services of the mysterious title character and her assistants who implement this system",
-        "genres": []
-    },
-    {
-        "title": "Inuyasha",
-        "image": "inuyasha.jpg",
-        "link": "https://www.youtube.com/watch?v=UCFBsLagBPk",
-        "synopsis": "To defend the Jewel of Four Souls, Inuyasha and Kagome continue to confront the wicked Naraku. Shippo, Miroku and the demon hunter Sango are all assisting them.",
-        "genres": []
-    },
-    {
-        "title": "Fate",
-        "image": "fate.jpg",
-        "link": "https://www.youtube.com/watch?v=NPItqNsCXM4",
-        "synopsis": "It follows a high schooler named Shirou Emiya, who finds himself unwittingly involved in the fifth iteration of a magical battle royale called the Holy Grail War.",
-        "genres": []
-    },
-    {
-        "title": "Bleach",
-        "image": "bleach.jpg",
-        "link": "https://www.youtube.com/watch?v=iutQJzAXiWo",
-        "synopsis": "Ichigo Kurosaki never asked for the ability to see ghosts -- he was born with the gift. When his family is attacked by a Hollow -- a malevolent lost soul -- Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace.",
-        "genres": []
-    }
-    
+  {
+    "title": "Blood of zeus",
+    "image": "../Assets/zeus.png",
+    "link": "https://www.netflix.com/ke/title/81001988?source=35",
+    "synopsis": "Chronicles the illegitimate son of Zeus, a young man tasked with saving heaven and earth despite the interference of a vengeful goddess and her monstrous forces.",
+    "genres": []
+  },
+  {
+    "title": "Naruto",
+    "image": "../Assets/naruto.jpg",
+    "link": "https://www.youtube.com/watch?v=Y9P1EhndE0w",
+    "synopsis": "Naruto, an adolescent ninja, dreams of becoming the Hokage in his village.",
+    "genres": []
+  },
+  {
+    "title": "Demon slayer",
+    "image": "../Assets/slayer.jpeg",
+    "link": "https://www.imdb.com/video/vi2476588825/?ref_=tt_vi_i_1",
+    "synopsis": " After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost.",
+    "genres": []
+  },
+  {
+    "title": "One piece",
+    "image": "../Assets/one-piece.jpeg",
+    "link": "https://www.youtube.com/watch?v=-3g8Nnehdao",
+    "synopsis": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece.",
+    "genres": []
+  },
+  {
+    "title": "Anime girl",
+    "image": "../Assets/anime-girl.jpg",
+    "link": "https://www.bilibili.tv/en/video/2049239198",
+    "synopsis": "The series focuses on the existence of a supernatural system that allows people to take revenge by having other people sent to Hell via the services of the mysterious title character and her assistants who implement this system",
+    "genres": []
+  },
+  {
+    "title": "Inuyasha",
+    "image": "../Assets/inuyasha.jpg",
+    "link": "https://www.youtube.com/watch?v=UCFBsLagBPk",
+    "synopsis": "To defend the Jewel of Four Souls, Inuyasha and Kagome continue to confront the wicked Naraku. Shippo, Miroku and the demon hunter Sango are all assisting them.",
+    "genres": []
+  },
+  {
+    "title": "Fate",
+    "image": "../Assets/fate.jpg",
+    "link": "https://www.youtube.com/watch?v=NPItqNsCXM4",
+    "synopsis": "It follows a high schooler named Shirou Emiya, who finds himself unwittingly involved in the fifth iteration of a magical battle royale called the Holy Grail War.",
+    "genres": []
+  },
+  {
+    "title": "Bleach",
+    "image": "../Assets/bleach.jpg",
+    "link": "https://www.youtube.com/watch?v=iutQJzAXiWo",
+    "synopsis": "Ichigo Kurosaki never asked for the ability to see ghosts -- he was born with the gift. When his family is attacked by a Hollow -- a malevolent lost soul -- Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace.",
+    "genres": []
+  },
+  {
+    "title": "Yasuke",
+    "image": "../Assets/yasuke.jpeg",
+    "link": "https://www.netflix.com/ke/title/80990863",
+    "synopsis": "A peaceful boatman once known as the Black Samurai is pulled back into conflict when he takes a little girl with mysterious powers under his wing.",
+    "genres": []
+  }
 ]
